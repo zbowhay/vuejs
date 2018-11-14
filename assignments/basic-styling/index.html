@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <script src="http://localhost:8080/node_modules/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="http://localhost:8080/basic-styling/styles.css">
+</head>
+
+<body>
+  <div id="exercise">
+    <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink"
+         class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+    <div>
+      <button @click="startEffect">Start Effect</button>
+      <div id="effect" :class="shrinkOrHighlight"></div>
+    </div>
+    <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+    <div :class="[largeText, padMeUp]">I got no class :(</div>
+    <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+    <div>
+      <p>type in any of the following: bg-red, bg-green, bg-blue.</p>
+      <input type="text" v-model="userClass">
+      <div class="user" :class="userClass"></div>
+    </div>
+    <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+    <div>
+      <input type="text" v-model="userClass2">
+      <input type="checkbox" @click="toggleRotate45">
+      <div class="user" :class="[userClass2, rotate45]"></div>
+    </div>
+    <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+    <div>
+      <input type="text" v-model="userStyles">
+      <div class="user" :style="userStyles"></div>
+    </div>
+    <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+    <div>
+      <button v-on:click="startProgress">Start Progress</button>
+      <div class="progress-bar-container">
+        <div class="progress-bar" :style="status"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<footer>
+  <script src="http://localhost:8080/basic-styling/app.js"></script>
+</footer>
+
+</html>
