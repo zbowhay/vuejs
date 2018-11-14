@@ -1,9 +1,17 @@
-<!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<html>
+  <head>
+    <script src="http://localhost:8080/node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-on:input="changeTitle">
+      <p>{{title}}</p>
+      <a v-bind:href="link">Google</a>
+      <p v-html="finishedLink"></p>
+    </div>
+  </body>
+  <foot>
+    <script src="http://localhost:8080/app.js"></script>
+  </foot>
+</html>
 
-<div id="app">
-  <input type="text" v-on:input="changeTitle">
-  <p>{{title}}</p>
-</div>
-
-<script src="./app.js"></script>
